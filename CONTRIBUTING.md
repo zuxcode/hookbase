@@ -8,7 +8,7 @@ Hookforge currently contains these workspaces:
 
 | Package | Purpose | Publish status |
 | --- | --- | --- |
-| `@hookforge/core` | Framework-independent React Hooks | Publishable |
+| `hookforge-core` | Framework-independent React Hooks | Publishable |
 | `@hookforge/nextjs` | Next.js-specific React Hooks and adapters | Publishable |
 | `@hookforge/typescript-config` | Shared TypeScript configuration | Private |
 
@@ -18,10 +18,10 @@ The dependency direction is intentional:
 @hookforge/nextjs
         │
         ▼
-@hookforge/core
+hookforge-core
 ```
 
-`@hookforge/core` must never depend on Next.js.
+`hookforge-core` must never depend on Next.js.
 
 Each publishable package owns its source, tests, build configuration, metadata, declarations, README, and release lifecycle.
 
@@ -87,8 +87,8 @@ Use pnpm filters for focused development.
 ### Core
 
 ```bash
-pnpm --filter @hookforge/core build
-pnpm --filter @hookforge/core test
+pnpm --filter hookforge-core build
+pnpm --filter hookforge-core test
 ```
 
 ### Next.js
@@ -118,11 +118,11 @@ A new hook should:
 
 ### Choose the correct package
 
-Put a hook in `@hookforge/core` when it is framework-independent.
+Put a hook in `hookforge-core` when it is framework-independent.
 
 Put a hook in `@hookforge/nextjs` when it directly depends on Next.js APIs or Next.js runtime behavior.
 
-Do not introduce a Next.js dependency into `@hookforge/core`.
+Do not introduce a Next.js dependency into `hookforge-core`.
 
 ## SSR and Next.js compatibility
 
@@ -307,7 +307,7 @@ Do not silently change a public API.
 
 Hookforge packages are released independently using Semantic Release and Conventional Commits.
 
-A change to `@hookforge/core` does not automatically require a release of `@hookforge/nextjs` unless the Next.js package is also affected.
+A change to `hookforge-core` does not automatically require a release of `@hookforge/nextjs` unless the Next.js package is also affected.
 
 Do not manually couple package versions or create a root-level release for all packages unless the release configuration requires it.
 

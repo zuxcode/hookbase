@@ -63,7 +63,7 @@ importers:
 
   packages/nextjs:
     dependencies:
-      '@hookforge/core':
+      'hookforge-core':
         specifier: workspace:*
         version: link:../core
       tsdown:

@@ -1,6 +1,6 @@
-# @hookforge/core
+# hookforge-core
 
-<h1 align="center">@hookforge/core</h1>
+<h1 align="center">hookforge-core</h1>
 
 <p align="center">
   Framework-independent, type-safe React Hooks for modern React applications.
@@ -10,48 +10,48 @@
   <a href="https://github.com/zuxcode/hookforge">
     <img alt="Repository" src="https://img.shields.io/badge/repository-Hookforge-blue.svg?style=flat-square">
   </a>
-  <a href="https://www.npmjs.com/package/@hookforge/core">
-    <img alt="npm" src="https://img.shields.io/npm/v/@hookforge/core.svg?style=flat-square">
+  <a href="https://www.npmjs.com/package/hookforge-core">
+    <img alt="npm" src="https://img.shields.io/npm/v/hookforge-core.svg?style=flat-square">
   </a>
   <a href="../../LICENSE">
-    <img alt="License" src="https://img.shields.io/npm/l/@hookforge/core.svg?style=flat-square">
+    <img alt="License" src="https://img.shields.io/npm/l/hookforge-core.svg?style=flat-square">
   </a>
 </p>
 
 ## About
 
-`@hookforge/core` is the framework-independent foundation of Hookforge.
+`hookforge-core` is the framework-independent foundation of Hookforge.
 
 It provides reusable, composable, and production-ready React Hooks without coupling the package to Next.js or another application framework.
 
-Use `@hookforge/core` when you want Hookforge functionality in a React application regardless of the framework or build system.
+Use `hookforge-core` when you want Hookforge functionality in a React application regardless of the framework or build system.
 
 ## Installation
 
 ### pnpm
 
 ```bash
-pnpm add @hookforge/core
+pnpm add hookforge-core
 ```
 
 ### npm
 
 ```bash
-npm install @hookforge/core
+npm install hookforge-core
 ```
 
 ### yarn
 
 ```bash
-yarn add @hookforge/core
+yarn add hookforge-core
 ```
 
 ## Usage
 
-Import hooks directly from `@hookforge/core`:
+Import hooks directly from `hookforge-core`:
 
 ```tsx
-import { useActiveLink } from "@hookforge/core";
+import { useActiveLink } from "hookforge-core";
 
 function Navigation() {
   const { isActive } = useActiveLink({
@@ -132,7 +132,7 @@ isActive("/dashboard", {
 
 ## Framework Independence
 
-`@hookforge/core` does **not** depend on Next.js.
+`hookforge-core` does **not** depend on Next.js.
 
 This makes it suitable for applications using:
 
@@ -157,19 +157,19 @@ pnpm install
 Build the package:
 
 ```bash
-pnpm --filter @hookforge/core build
+pnpm --filter hookforge-core build
 ```
 
 Run tests:
 
 ```bash
-pnpm --filter @hookforge/core test
+pnpm --filter hookforge-core test
 ```
 
 Run type checking:
 
 ```bash
-pnpm --filter @hookforge/core lint:types
+pnpm --filter hookforge-core lint:types
 ```
 
 ## Package Structure
@@ -185,7 +185,7 @@ packages/core/
 
 ## Publishing
 
-`@hookforge/core` is independently versioned and published to npm.
+`hookforge-core` is independently versioned and published to npm.
 
 Changes to the core package can be released without requiring a release of other Hookforge packages.
 

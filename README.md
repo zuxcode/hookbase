@@ -38,15 +38,15 @@ Hookforge is organized into independently buildable, testable, and publishable p
 
 | Package                                  | Description                               |
 | ---------------------------------------- | ----------------------------------------- |
-| [`@hookforge/core`](./packages/core)     | Framework-independent React Hooks         |
+| [`hookforge-core`](./packages/core)     | Framework-independent React Hooks         |
 | [`@hookforge/nextjs`](./packages/nextjs) | Next.js-specific React Hooks and adapters |
 
-### `@hookforge/core`
+### `hookforge-core`
 
 The core package contains reusable React Hooks that do not depend on Next.js.
 
 ```bash
-pnpm add @hookforge/core
+pnpm add hookforge-core
 ```
 
 Use it when building React applications that need framework-independent hooks.
@@ -61,7 +61,7 @@ The Next.js package contains hooks and adapters that integrate Hookforge with Ne
 pnpm add @hookforge/nextjs
 ```
 
-It may depend on `@hookforge/core`, but the core package never depends on Next.js.
+It may depend on `hookforge-core`, but the core package never depends on Next.js.
 
 See [`packages/nextjs/README.md`](./packages/nextjs/README.md) for the complete API and usage documentation.
 
@@ -79,7 +79,7 @@ Hookforge follows a layered package architecture:
                │
                ▼
 ┌──────────────────────────────┐
-│        @hookforge/core       │
+│        hookforge-core       │
 │                              │
 │ Framework-independent React  │
 │ Hooks and utilities          │
@@ -107,7 +107,7 @@ Install only the package you need.
 ### React
 
 ```bash
-pnpm add @hookforge/core
+pnpm add hookforge-core
 ```
 
 ### Next.js
@@ -118,10 +118,10 @@ pnpm add @hookforge/nextjs
 
 ## Usage
 
-Core hooks can be imported from `@hookforge/core`:
+Core hooks can be imported from `hookforge-core`:
 
 ```tsx
-import { useActiveLink } from "@hookforge/core";
+import { useActiveLink } from "hookforge-core";
 
 function Navigation() {
   const { isActive } = useActiveLink({
@@ -268,7 +268,7 @@ pnpm build
 Build an individual package:
 
 ```bash
-pnpm --filter @hookforge/core build
+pnpm --filter hookforge-core build
 ```
 
 ```bash
@@ -278,7 +278,7 @@ pnpm --filter @hookforge/nextjs build
 ### Test an individual package
 
 ```bash
-pnpm --filter @hookforge/core test
+pnpm --filter hookforge-core test
 ```
 
 ```bash
@@ -292,8 +292,8 @@ Because packages are independently publishable, package-specific commands can be
 For example:
 
 ```bash
-pnpm --filter @hookforge/core build
-pnpm --filter @hookforge/core test
+pnpm --filter hookforge-core build
+pnpm --filter hookforge-core test
 ```
 
 or:
@@ -360,7 +360,7 @@ pnpm test:coverage
 Individual packages can also be tested independently:
 
 ```bash
-pnpm --filter @hookforge/core test
+pnpm --filter hookforge-core test
 ```
 
 ```bash
@@ -388,7 +388,7 @@ Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) for contribution guidelines.
 
 Hookforge packages are released independently.
 
-A change to `@hookforge/core` does not require a new release of `@hookforge/nextjs`, unless the Next.js package is also affected.
+A change to `hookforge-core` does not require a new release of `@hookforge/nextjs`, unless the Next.js package is also affected.
 
 Releases use [Semantic Release](https://semantic-release.gitbook.io/semantic-release/) and conventional commits.
 

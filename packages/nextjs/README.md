@@ -22,7 +22,7 @@
 
 `@hookforge/nextjs` provides Next.js-specific hooks and adapters for Hookforge.
 
-It is designed to integrate Hookforge with Next.js APIs while keeping the framework-independent functionality in [`@hookforge/core`](../core).
+It is designed to integrate Hookforge with Next.js APIs while keeping the framework-independent functionality in [`hookforge-core`](../core).
 
 The package is intended for applications using modern Next.js and React.
 
@@ -140,7 +140,7 @@ isActive("/dashboard", {
 });
 ```
 
-## Relationship with `@hookforge/core`
+## Relationship with `hookforge-core`
 
 The package architecture separates framework-independent logic from Next.js-specific APIs.
 
@@ -148,12 +148,12 @@ The package architecture separates framework-independent logic from Next.js-spec
 @hookforge/nextjs
         │
         ▼
-@hookforge/core
+hookforge-core
 ```
 
-`@hookforge/nextjs` may depend on `@hookforge/core`.
+`@hookforge/nextjs` may depend on `hookforge-core`.
 
-`@hookforge/core` does not depend on `@hookforge/nextjs` or Next.js.
+`hookforge-core` does not depend on `@hookforge/nextjs` or Next.js.
 
 This allows the core package to remain usable outside Next.js while providing a dedicated integration for Next.js applications.
 
@@ -198,7 +198,7 @@ packages/nextjs/
 
 `@hookforge/nextjs` is independently versioned and published to npm.
 
-A change to `@hookforge/nextjs` does not require a new `@hookforge/core` release unless the core package itself has changed.
+A change to `@hookforge/nextjs` does not require a new `hookforge-core` release unless the core package itself has changed.
 
 ## Contributing
 

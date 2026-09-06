@@ -1,6 +1,6 @@
 "use client";
 
-import { type ActiveLink, useActiveLink } from "@hookforge/core";
+import { type ActiveLink, useActiveLink } from "hookforge-core";
 import { usePathname } from "next/navigation";
 
 /**
