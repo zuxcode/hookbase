@@ -1,5 +1,5 @@
 {
-  "name": "@hookforge/nextjs",
+  "name": "hookforge-nextjs",
   "version": "0.0.2-canary.23bf755",
   "description": "React/Next.js Hooks Library",
   "keywords": [
