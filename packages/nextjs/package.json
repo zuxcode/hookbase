@@ -20,10 +20,14 @@
   "license": "MIT",
   "author": "Alfred Chigozie Nwanokwai <zuxcode@gmail.com>",
   "sideEffects": false,
-  "main": "dist/hookforge.js",
-  "unpkg": "dist/hookforge.umd.min.js",
-  "module": "dist/hookforge.esm.js",
-  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
+    }
+  },
+  "main": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "dist"
   ],
@@ -35,9 +39,9 @@
     "cz": "git-cz",
     "fix": "ultracite fix",
     "release": "semantic-release",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test": "vitest",
+    "test:coverage": "vitest --coverage",
+    "test:watch": "vitest --watch"
   },
   "config": {
     "commitizen": {

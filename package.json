@@ -10,8 +10,9 @@
     "fix": "ultracite fix",
     "lint": "turbo run lint",
     "prepare": "lefthook install",
-    "release": "bun scripts/release.ts",
-    "release:canary": "bun scripts/canary.ts"
+    "release": "bun scripts/publish.ts",
+    "release:canary": "bun scripts/canary.ts",
+    "version": "bun scripts/version.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "2.5.12",
