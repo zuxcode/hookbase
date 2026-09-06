@@ -1,27 +1,27 @@
-# Contributing to Hookforge
+# Contributing to Hookbase
 
-Thank you for contributing to Hookforge! Hookforge is a TypeScript-first monorepo for reusable, composable, production-ready React Hooks, with a framework-independent core and dedicated framework integrations.
+Thank you for contributing to Hookbase! Hookbase is a TypeScript-first monorepo for reusable, composable, production-ready React Hooks, with a framework-independent core and dedicated framework integrations.
 
 ## Repository architecture
 
-Hookforge currently contains these workspaces:
+Hookbase currently contains these workspaces:
 
 | Package | Purpose | Publish status |
 | --- | --- | --- |
-| `hookforge-core` | Framework-independent React Hooks | Publishable |
-| `hookforge-nextjs` | Next.js-specific React Hooks and adapters | Publishable |
-| `@hookforge/typescript-config` | Shared TypeScript configuration | Private |
+| `Hookbase-core` | Framework-independent React Hooks | Publishable |
+| `Hookbase-nextjs` | Next.js-specific React Hooks and adapters | Publishable |
+| `@Hookbase/typescript-config` | Shared TypeScript configuration | Private |
 
 The dependency direction is intentional:
 
 ```text
-hookforge-nextjs
+Hookbase-nextjs
         │
         ▼
-hookforge-core
+Hookbase-core
 ```
 
-`hookforge-core` must never depend on Next.js.
+`Hookbase-core` must never depend on Next.js.
 
 Each publishable package owns its source, tests, build configuration, metadata, declarations, README, and release lifecycle.
 
@@ -34,8 +34,8 @@ Use the Node.js and pnpm versions declared by the repository configuration.
 Clone the repository:
 
 ```bash
-git clone https://github.com/zuxcode/hookforge.git
-cd hookforge
+git clone https://github.com/zuxcode/Hookbase.git
+cd Hookbase
 ```
 
 Install dependencies:
@@ -87,15 +87,15 @@ Use pnpm filters for focused development.
 ### Core
 
 ```bash
-pnpm --filter hookforge-core build
-pnpm --filter hookforge-core test
+pnpm --filter Hookbase-core build
+pnpm --filter Hookbase-core test
 ```
 
 ### Next.js
 
 ```bash
-pnpm --filter hookforge-nextjs build
-pnpm --filter hookforge-nextjs test
+pnpm --filter Hookbase-nextjs build
+pnpm --filter Hookbase-nextjs test
 ```
 
 When changing a shared or cross-package API, run the complete repository checks as well.
@@ -118,11 +118,11 @@ A new hook should:
 
 ### Choose the correct package
 
-Put a hook in `hookforge-core` when it is framework-independent.
+Put a hook in `Hookbase-core` when it is framework-independent.
 
-Put a hook in `hookforge-nextjs` when it directly depends on Next.js APIs or Next.js runtime behavior.
+Put a hook in `Hookbase-nextjs` when it directly depends on Next.js APIs or Next.js runtime behavior.
 
-Do not introduce a Next.js dependency into `hookforge-core`.
+Do not introduce a Next.js dependency into `Hookbase-core`.
 
 ## SSR and Next.js compatibility
 
@@ -156,7 +156,7 @@ For public API changes:
 
 ## Tests
 
-Hookforge uses Jest and React Testing Library.
+Hookbase uses Jest and React Testing Library.
 
 Tests should cover the behavior that matters to users, including where applicable:
 
@@ -180,7 +180,7 @@ pnpm test:coverage
 
 ## Code quality
 
-Hookforge uses Ultracite for code quality and formatting, with Lefthook managing Git hooks.
+Hookbase uses Ultracite for code quality and formatting, with Lefthook managing Git hooks.
 
 Run checks:
 
@@ -244,7 +244,7 @@ git checkout -b feat/nextjs-router-state
 
 ## Commits
 
-Hookforge uses Conventional Commits and package scopes.
+Hookbase uses Conventional Commits and package scopes.
 
 Examples:
 
@@ -305,9 +305,9 @@ Do not silently change a public API.
 
 ## Releases
 
-Hookforge packages are released independently using Semantic Release and Conventional Commits.
+Hookbase packages are released independently using Semantic Release and Conventional Commits.
 
-A change to `hookforge-core` does not automatically require a release of `hookforge-nextjs` unless the Next.js package is also affected.
+A change to `Hookbase-core` does not automatically require a release of `Hookbase-nextjs` unless the Next.js package is also affected.
 
 Do not manually couple package versions or create a root-level release for all packages unless the release configuration requires it.
 
@@ -317,10 +317,10 @@ Do not report security vulnerabilities in public issues. See `SECURITY.md`.
 
 ## Code of Conduct
 
-Participation in Hookforge is governed by `CODE_OF_CONDUCT.md`.
+Participation in Hookbase is governed by `CODE_OF_CONDUCT.md`.
 
 ## Questions and proposals
 
 Use GitHub Issues for actionable bugs and feature/hook proposals. When available, use Discussions for general questions and community conversation.
 
-Thanks for helping build Hookforge!
+Thanks for helping build Hookbase!

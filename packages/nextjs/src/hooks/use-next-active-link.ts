@@ -1,6 +1,6 @@
 "use client";
 
-import { type ActiveLink, useActiveLink } from "hookforge-core";
+import { type ActiveLink, useActiveLink } from "Hookbase-core";
 import { usePathname } from "next/navigation";
 
 /**
@@ -11,7 +11,7 @@ import { usePathname } from "next/navigation";
  * "use client";
  *
  * import Link from "next/link";
- * import { useNextActiveLink } from "hookforge/next";
+ * import { useNextActiveLink } from "Hookbase/next";
  *
  * export function Navigation() {
  *   const { isActive } = useNextActiveLink();

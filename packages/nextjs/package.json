@@ -1,5 +1,5 @@
 {
-  "name": "hookforge-nextjs",
+  "name": "Hookbase-nextjs",
   "version": "0.0.1",
   "description": "React/Next.js Hooks Library",
   "keywords": [
@@ -9,13 +9,13 @@
     "nextjs",
     "next"
   ],
-  "homepage": "https://github.com/zuxcode/hookforge#readme",
+  "homepage": "https://github.com/zuxcode/Hookbase#readme",
   "bugs": {
-    "url": "https://github.com/zuxcode/hookforge/issues"
+    "url": "https://github.com/zuxcode/Hookbase/issues"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/zuxcode/hookforge.git"
+    "url": "https://github.com/zuxcode/Hookbase.git"
   },
   "license": "MIT",
   "author": "Alfred Chigozie Nwanokwai <zuxcode@gmail.com>",
@@ -49,11 +49,11 @@
     }
   },
   "dependencies": {
-    "hookforge-core": "workspace:*",
+    "Hookbase-core": "workspace:*",
     "tsdown": "^0.23.0"
   },
   "devDependencies": {
-    "@hookforge/typescript-config": "workspace:*",
+    "@Hookbase/typescript-config": "workspace:*",
     "next": "^16.3.4",
     "react": "^19.2.8"
   },

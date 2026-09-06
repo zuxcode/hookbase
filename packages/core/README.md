@@ -1,57 +1,57 @@
-# hookforge-core
+# Hookbase-core
 
-<h1 align="center">hookforge-core</h1>
+<h1 align="center">Hookbase-core</h1>
 
 <p align="center">
   Framework-independent, type-safe React Hooks for modern React applications.
 </p>
 
 <p align="center">
-  <a href="https://github.com/zuxcode/hookforge">
-    <img alt="Repository" src="https://img.shields.io/badge/repository-Hookforge-blue.svg?style=flat-square">
+  <a href="https://github.com/zuxcode/Hookbase">
+    <img alt="Repository" src="https://img.shields.io/badge/repository-Hookbase-blue.svg?style=flat-square">
   </a>
-  <a href="https://www.npmjs.com/package/hookforge-core">
-    <img alt="npm" src="https://img.shields.io/npm/v/hookforge-core.svg?style=flat-square">
+  <a href="https://www.npmjs.com/package/Hookbase-core">
+    <img alt="npm" src="https://img.shields.io/npm/v/Hookbase-core.svg?style=flat-square">
   </a>
   <a href="../../LICENSE">
-    <img alt="License" src="https://img.shields.io/npm/l/hookforge-core.svg?style=flat-square">
+    <img alt="License" src="https://img.shields.io/npm/l/Hookbase-core.svg?style=flat-square">
   </a>
 </p>
 
 ## About
 
-`hookforge-core` is the framework-independent foundation of Hookforge.
+`Hookbase-core` is the framework-independent foundation of Hookbase.
 
 It provides reusable, composable, and production-ready React Hooks without coupling the package to Next.js or another application framework.
 
-Use `hookforge-core` when you want Hookforge functionality in a React application regardless of the framework or build system.
+Use `Hookbase-core` when you want Hookbase functionality in a React application regardless of the framework or build system.
 
 ## Installation
 
 ### pnpm
 
 ```bash
-pnpm add hookforge-core
+pnpm add Hookbase-core
 ```
 
 ### npm
 
 ```bash
-npm install hookforge-core
+npm install Hookbase-core
 ```
 
 ### yarn
 
 ```bash
-yarn add hookforge-core
+yarn add Hookbase-core
 ```
 
 ## Usage
 
-Import hooks directly from `hookforge-core`:
+Import hooks directly from `Hookbase-core`:
 
 ```tsx
-import { useActiveLink } from "hookforge-core";
+import { useActiveLink } from "Hookbase-core";
 
 function Navigation() {
   const { isActive } = useActiveLink({
@@ -132,7 +132,7 @@ isActive("/dashboard", {
 
 ## Framework Independence
 
-`hookforge-core` does **not** depend on Next.js.
+`Hookbase-core` does **not** depend on Next.js.
 
 This makes it suitable for applications using:
 
@@ -142,13 +142,13 @@ This makes it suitable for applications using:
 * Other React-based build systems
 * Custom React applications
 
-Framework-specific functionality belongs in dedicated Hookforge integration packages.
+Framework-specific functionality belongs in dedicated Hookbase integration packages.
 
-For Next.js applications, see [`hookforge-nextjs`](../nextjs).
+For Next.js applications, see [`Hookbase-nextjs`](../nextjs).
 
 ## Development
 
-From the Hookforge repository root:
+From the Hookbase repository root:
 
 ```bash
 pnpm install
@@ -157,19 +157,19 @@ pnpm install
 Build the package:
 
 ```bash
-pnpm --filter hookforge-core build
+pnpm --filter Hookbase-core build
 ```
 
 Run tests:
 
 ```bash
-pnpm --filter hookforge-core test
+pnpm --filter Hookbase-core test
 ```
 
 Run type checking:
 
 ```bash
-pnpm --filter hookforge-core lint:types
+pnpm --filter Hookbase-core lint:types
 ```
 
 ## Package Structure
@@ -185,9 +185,9 @@ packages/core/
 
 ## Publishing
 
-`hookforge-core` is independently versioned and published to npm.
+`Hookbase-core` is independently versioned and published to npm.
 
-Changes to the core package can be released without requiring a release of other Hookforge packages.
+Changes to the core package can be released without requiring a release of other Hookbase packages.
 
 ## Contributing
 

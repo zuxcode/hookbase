@@ -1,5 +1,5 @@
 {
-  "extends": "@hookforge/typescript-config/tsconfig.json",
+  "extends": "@Hookbase/typescript-config/tsconfig.json",
   "compilerOptions": {
     "noEmit": false,
 

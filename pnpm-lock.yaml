@@ -48,7 +48,7 @@ importers:
         specifier: ^0.23.0
         version: 0.23.0(@typescript/native-preview@7.0.0-dev.20260707.2)(typescript@7.0.2)
     devDependencies:
-      '@hookforge/typescript-config':
+      '@Hookbase/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       '@testing-library/react':
@@ -63,14 +63,14 @@ importers:
 
   packages/nextjs:
     dependencies:
-      'hookforge-core':
+      'Hookbase-core':
         specifier: workspace:*
         version: link:../core
       tsdown:
         specifier: ^0.23.0
         version: 0.23.0(@typescript/native-preview@7.0.0-dev.20260707.2)(typescript@7.0.2)
     devDependencies:
-      '@hookforge/typescript-config':
+      '@Hookbase/typescript-config':
         specifier: workspace:*
         version: link:../typescript-config
       next:

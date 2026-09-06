@@ -2,7 +2,7 @@
 
 ## Our commitment
 
-Hookforge is committed to providing a welcoming, inclusive, and harassment-free community for everyone who participates in the project.
+Hookbase is committed to providing a welcoming, inclusive, and harassment-free community for everyone who participates in the project.
 
 We expect contributors, maintainers, reviewers, and community members to communicate professionally and respectfully.
 
@@ -35,8 +35,8 @@ Maintainers may remove content, close issues or pull requests, restrict particip
 
 ## Scope
 
-This Code of Conduct applies to the repository, issues, pull requests, discussions, and other official Hookforge community spaces.
+This Code of Conduct applies to the repository, issues, pull requests, discussions, and other official Hookbase community spaces.
 
 ## Attribution
 
-Inspired by the Contributor Covenant and adapted for Hookforge.
+Inspired by the Contributor Covenant and adapted for Hookbase.

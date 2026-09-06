@@ -1,32 +1,32 @@
-# Hookforge
+# Hookbase
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 [![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-<h1 align="center">Hookforge</h1>
+<h1 align="center">Hookbase</h1>
 
 <p align="center">
   A modern, type-safe React Hooks library for React and Next.js.
 </p>
 
 <p align="center">
-  <a href="https://github.com/zuxcode/hookforge/blob/master/LICENSE">
+  <a href="https://github.com/zuxcode/Hookbase/blob/master/LICENSE">
     <img alt="License" src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square">
   </a>
-  <a href="https://github.com/zuxcode/hookforge/actions">
-    <img alt="CI" src="https://github.com/zuxcode/hookforge/actions/workflows/ci.yml/badge.svg">
+  <a href="https://github.com/zuxcode/Hookbase/actions">
+    <img alt="CI" src="https://github.com/zuxcode/Hookbase/actions/workflows/ci.yml/badge.svg">
   </a>
-  <a href="https://www.npmjs.com/search?q=hookforge">
-    <img alt="npm" src="https://img.shields.io/badge/npm-Hookforge-red.svg?style=flat-square">
+  <a href="https://www.npmjs.com/search?q=Hookbase">
+    <img alt="npm" src="https://img.shields.io/badge/npm-Hookbase-red.svg?style=flat-square">
   </a>
-  <a href="https://github.com/zuxcode/hookforge/pulls">
+  <a href="https://github.com/zuxcode/Hookbase/pulls">
     <img alt="PRs Welcome" src="https://img.shields.io/badge/PRs-welcome-green.svg?style=flat-square">
   </a>
 </p>
 
 ## About
 
-**Hookforge** is a TypeScript-first monorepo for reusable, composable, and production-ready React Hooks.
+**Hookbase** is a TypeScript-first monorepo for reusable, composable, and production-ready React Hooks.
 
 The project is designed around a framework-independent core with dedicated framework integrations.
 
@@ -34,44 +34,44 @@ The core hooks remain independent of Next.js and other frameworks, while framewo
 
 ## Packages
 
-Hookforge is organized into independently buildable, testable, and publishable packages.
+Hookbase is organized into independently buildable, testable, and publishable packages.
 
 | Package                                  | Description                               |
 | ---------------------------------------- | ----------------------------------------- |
-| [`hookforge-core`](./packages/core)     | Framework-independent React Hooks         |
-| [`hookforge-nextjs`](./packages/nextjs) | Next.js-specific React Hooks and adapters |
+| [`Hookbase-core`](./packages/core)     | Framework-independent React Hooks         |
+| [`Hookbase-nextjs`](./packages/nextjs) | Next.js-specific React Hooks and adapters |
 
-### `hookforge-core`
+### `Hookbase-core`
 
 The core package contains reusable React Hooks that do not depend on Next.js.
 
 ```bash
-pnpm add hookforge-core
+pnpm add Hookbase-core
 ```
 
 Use it when building React applications that need framework-independent hooks.
 
 See [`packages/core/README.md`](./packages/core/README.md) for the complete API and usage documentation.
 
-### `hookforge-nextjs`
+### `Hookbase-nextjs`
 
-The Next.js package contains hooks and adapters that integrate Hookforge with Next.js APIs.
+The Next.js package contains hooks and adapters that integrate Hookbase with Next.js APIs.
 
 ```bash
-pnpm add hookforge-nextjs
+pnpm add Hookbase-nextjs
 ```
 
-It may depend on `hookforge-core`, but the core package never depends on Next.js.
+It may depend on `Hookbase-core`, but the core package never depends on Next.js.
 
 See [`packages/nextjs/README.md`](./packages/nextjs/README.md) for the complete API and usage documentation.
 
 ## Architecture
 
-Hookforge follows a layered package architecture:
+Hookbase follows a layered package architecture:
 
 ```text
 ┌──────────────────────────────┐
-│       hookforge-nextjs      │
+│       Hookbase-nextjs      │
 │                              │
 │ Next.js-specific hooks and   │
 │ framework integrations       │
@@ -79,7 +79,7 @@ Hookforge follows a layered package architecture:
                │
                ▼
 ┌──────────────────────────────┐
-│        hookforge-core       │
+│        Hookbase-core       │
 │                              │
 │ Framework-independent React  │
 │ Hooks and utilities          │
@@ -107,21 +107,21 @@ Install only the package you need.
 ### React
 
 ```bash
-pnpm add hookforge-core
+pnpm add Hookbase-core
 ```
 
 ### Next.js
 
 ```bash
-pnpm add hookforge-nextjs
+pnpm add Hookbase-nextjs
 ```
 
 ## Usage
 
-Core hooks can be imported from `hookforge-core`:
+Core hooks can be imported from `Hookbase-core`:
 
 ```tsx
-import { useActiveLink } from "hookforge-core";
+import { useActiveLink } from "Hookbase-core";
 
 function Navigation() {
   const { isActive } = useActiveLink({
@@ -142,12 +142,12 @@ function Navigation() {
 }
 ```
 
-Next.js-specific functionality can be imported from `hookforge-nextjs`:
+Next.js-specific functionality can be imported from `Hookbase-nextjs`:
 
 ```tsx
 "use client";
 
-import { useNextActiveLink } from "hookforge-nextjs";
+import { useNextActiveLink } from "Hookbase-nextjs";
 
 export function Navigation() {
   const { isActive } = useNextActiveLink();
@@ -168,10 +168,10 @@ export function Navigation() {
 
 ## Monorepo
 
-Hookforge uses a pnpm workspace to manage multiple packages from a single repository.
+Hookbase uses a pnpm workspace to manage multiple packages from a single repository.
 
 ```text
-hookforge/
+Hookbase/
 ├── packages/
 │   ├── core/
 │   │   ├── src/
@@ -209,8 +209,8 @@ Packages can therefore be built, tested, versioned, published, and deployed inde
 Clone the repository:
 
 ```bash
-git clone https://github.com/zuxcode/hookforge.git
-cd hookforge
+git clone https://github.com/zuxcode/Hookbase.git
+cd Hookbase
 ```
 
 Install dependencies:
@@ -268,21 +268,21 @@ pnpm build
 Build an individual package:
 
 ```bash
-pnpm --filter hookforge-core build
+pnpm --filter Hookbase-core build
 ```
 
 ```bash
-pnpm --filter hookforge-nextjs build
+pnpm --filter Hookbase-nextjs build
 ```
 
 ### Test an individual package
 
 ```bash
-pnpm --filter hookforge-core test
+pnpm --filter Hookbase-core test
 ```
 
 ```bash
-pnpm --filter hookforge-nextjs test
+pnpm --filter Hookbase-nextjs test
 ```
 
 ## Package Development
@@ -292,15 +292,15 @@ Because packages are independently publishable, package-specific commands can be
 For example:
 
 ```bash
-pnpm --filter hookforge-core build
-pnpm --filter hookforge-core test
+pnpm --filter Hookbase-core build
+pnpm --filter Hookbase-core test
 ```
 
 or:
 
 ```bash
-pnpm --filter hookforge-nextjs build
-pnpm --filter hookforge-nextjs test
+pnpm --filter Hookbase-nextjs build
+pnpm --filter Hookbase-nextjs test
 ```
 
 This allows CI and release workflows to operate on individual packages without requiring every package to be deployed together.
@@ -325,7 +325,7 @@ See the package README for package-specific build information.
 
 ## Code Quality
 
-Hookforge uses [Ultracite](https://www.ultracite.dev/) for code quality and formatting.
+Hookbase uses [Ultracite](https://www.ultracite.dev/) for code quality and formatting.
 
 Run:
 
@@ -343,7 +343,7 @@ Git hooks are managed using Lefthook.
 
 ## Testing
 
-Hookforge uses Jest and React Testing Library for testing React Hooks.
+Hookbase uses Jest and React Testing Library for testing React Hooks.
 
 Run the complete test suite:
 
@@ -360,11 +360,11 @@ pnpm test:coverage
 Individual packages can also be tested independently:
 
 ```bash
-pnpm --filter hookforge-core test
+pnpm --filter Hookbase-core test
 ```
 
 ```bash
-pnpm --filter hookforge-nextjs test
+pnpm --filter Hookbase-nextjs test
 ```
 
 ## Contributing
@@ -386,9 +386,9 @@ Please read [`CONTRIBUTING.md`](./CONTRIBUTING.md) for contribution guidelines.
 
 ## Releases
 
-Hookforge packages are released independently.
+Hookbase packages are released independently.
 
-A change to `hookforge-core` does not require a new release of `hookforge-nextjs`, unless the Next.js package is also affected.
+A change to `Hookbase-core` does not require a new release of `Hookbase-nextjs`, unless the Next.js package is also affected.
 
 Releases use [Semantic Release](https://semantic-release.gitbook.io/semantic-release/) and conventional commits.
 
@@ -424,7 +424,7 @@ For package-specific publishing configuration, see the package's `package.json` 
 
 ## License
 
-Hookforge is released under the MIT License.
+Hookbase is released under the MIT License.
 
 Copyright © 2026 Alfred Chigozie Nwanokwai.
 
@@ -435,7 +435,7 @@ See [`LICENSE`](./LICENSE) for details.
 Created and maintained by **Alfred Chigozie Nwanokwai**.
 
 * GitHub: https://github.com/zuxcode
-* Repository: https://github.com/zuxcode/hookforge
+* Repository: https://github.com/zuxcode/Hookbase
 
 ## Contributors 
 
@@ -447,7 +447,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/zuxcode"><img src="https://avatars.githubusercontent.com/u/91379753?v=4?s=100" width="100px;" alt="Alfred Chigozie Nwanokwai"/><br /><sub><b>Alfred Chigozie Nwanokwai</b></sub></a><br /><a href="https://github.com/zuxcode/hookforge/commits?author=zuxcode" title="Code">💻</a> <a href="#ideas-zuxcode" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-zuxcode" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-zuxcode" title="Maintenance">🚧</a> <a href="https://github.com/zuxcode/hookforge/commits?author=zuxcode" title="Documentation">📖</a> <a href="#design-zuxcode" title="Design">🎨</a> <a href="#projectManagement-zuxcode" title="Project Management">📆</a> <a href="https://github.com/zuxcode/hookforge/commits?author=zuxcode" title="Tests">⚠️</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/zuxcode"><img src="https://avatars.githubusercontent.com/u/91379753?v=4?s=100" width="100px;" alt="Alfred Chigozie Nwanokwai"/><br /><sub><b>Alfred Chigozie Nwanokwai</b></sub></a><br /><a href="https://github.com/zuxcode/Hookbase/commits?author=zuxcode" title="Code">💻</a> <a href="#ideas-zuxcode" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-zuxcode" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-zuxcode" title="Maintenance">🚧</a> <a href="https://github.com/zuxcode/Hookbase/commits?author=zuxcode" title="Documentation">📖</a> <a href="#design-zuxcode" title="Design">🎨</a> <a href="#projectManagement-zuxcode" title="Project Management">📆</a> <a href="https://github.com/zuxcode/Hookbase/commits?author=zuxcode" title="Tests">⚠️</a></td>
     </tr>
   </tbody>
   <tfoot>
