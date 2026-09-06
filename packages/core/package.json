@@ -1,6 +1,6 @@
 {
   "name": "hookforge-core",
-  "version": "0.0.2-canary.23bf755",
+  "version": "0.0.1",
   "description": "React/Next.js Hooks Library",
   "keywords": [
     "react",
