@@ -6,7 +6,7 @@
   "changelog": [
     "@changesets/changelog-github",
     {
-      "repo": "hookbase"
+      "repo": "zuxcode/hookforge"
     }
   ],
   "commit": true,
