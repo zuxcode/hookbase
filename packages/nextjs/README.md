@@ -60,15 +60,15 @@ For example:
 import { useNextActiveLink } from "hookbase-nextjs";
 
 export function Navigation() {
-  const { isActive } = useNextActiveLink();
+  const { getActiveLinkProps } = useNextActiveLink();
 
   return (
     <nav>
-      <a href="/dashboard" {...isActive("/dashboard")}>
+      <a href="/dashboard" {...getActiveLinkProps("/dashboard")}>
         Dashboard
       </a>
 
-      <a href="/settings" {...isActive("/settings")}>
+      <a href="/settings" {...getActiveLinkProps("/settings")}>
         Settings
       </a>
     </nav>
@@ -96,7 +96,7 @@ For example:
 import { useNextActiveLink } from "hookbase-nextjs";
 
 export function Navigation() {
-  const { isActive } = useNextActiveLink();
+  const { getActiveLinkProps } = useNextActiveLink();
 
   // ...
 }
@@ -113,13 +113,13 @@ Provides active-link behavior using the current Next.js pathname.
 
 import { useNextActiveLink } from "hookbase-nextjs";
 
-const { isActive } = useNextActiveLink();
+const { getActiveLinkProps } = useNextActiveLink();
 ```
 
 Use it with:
 
 ```tsx
-<a href="/dashboard" {...isActive("/dashboard")}>
+<a href="/dashboard" {...getActiveLinkProps("/dashboard")}>
   Dashboard
 </a>
 ```
@@ -129,13 +129,13 @@ Use it with:
 Nested routes can be matched by default:
 
 ```tsx
-isActive("/dashboard");
+getActiveLinkProps("/dashboard");
 ```
 
 For exact matching:
 
 ```tsx
-isActive("/dashboard", {
+getActiveLinkProps("/dashboard", {
   exact: true,
 });
 ```

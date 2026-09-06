@@ -19,8 +19,8 @@ describe("useNextActiveLink", () => {
 
     const { result } = renderHook(() => useNextActiveLink());
 
-    expect(result.current.isActive("/dashboard").active).toBe(true);
-    expect(result.current.isActive("/users").active).toBe(false);
+    expect(result.current.getActiveLinkProps("/dashboard").active).toBe(true);
+    expect(result.current.getActiveLinkProps("/users").active).toBe(false);
   });
 
   it("matches nested routes", () => {
@@ -28,9 +28,11 @@ describe("useNextActiveLink", () => {
 
     const { result } = renderHook(() => useNextActiveLink());
 
-    expect(result.current.isActive("/dashboard").active).toBe(true);
-    expect(result.current.isActive("/dashboard/settings").active).toBe(true);
-    expect(result.current.isActive("/users").active).toBe(false);
+    expect(result.current.getActiveLinkProps("/dashboard").active).toBe(true);
+    expect(
+      result.current.getActiveLinkProps("/dashboard/settings").active
+    ).toBe(true);
+    expect(result.current.getActiveLinkProps("/users").active).toBe(false);
   });
 
   it("supports exact matching", () => {
@@ -38,12 +40,13 @@ describe("useNextActiveLink", () => {
 
     const { result } = renderHook(() => useNextActiveLink());
 
-    expect(result.current.isActive("/dashboard", { exact: true }).active).toBe(
-      false
-    );
+    expect(
+      result.current.getActiveLinkProps("/dashboard", { exact: true }).active
+    ).toBe(false);
 
     expect(
-      result.current.isActive("/dashboard/settings", { exact: true }).active
+      result.current.getActiveLinkProps("/dashboard/settings", { exact: true })
+        .active
     ).toBe(true);
   });
 
@@ -52,8 +55,8 @@ describe("useNextActiveLink", () => {
 
     const { result } = renderHook(() => useNextActiveLink());
 
-    expect(result.current.isActive("/").active).toBe(true);
-    expect(result.current.isActive("/dashboard").active).toBe(false);
+    expect(result.current.getActiveLinkProps("/").active).toBe(true);
+    expect(result.current.getActiveLinkProps("/dashboard").active).toBe(false);
   });
 
   it("falls back to '/' when usePathname returns null", () => {
@@ -61,8 +64,8 @@ describe("useNextActiveLink", () => {
 
     const { result } = renderHook(() => useNextActiveLink());
 
-    expect(result.current.isActive("/").active).toBe(true);
-    expect(result.current.isActive("/dashboard").active).toBe(false);
+    expect(result.current.getActiveLinkProps("/").active).toBe(true);
+    expect(result.current.getActiveLinkProps("/dashboard").active).toBe(false);
   });
 
   it("returns the expected accessibility attributes", () => {
@@ -70,13 +73,13 @@ describe("useNextActiveLink", () => {
 
     const { result } = renderHook(() => useNextActiveLink());
 
-    expect(result.current.isActive("/dashboard")).toEqual({
+    expect(result.current.getActiveLinkProps("/dashboard")).toEqual({
       active: true,
       "aria-current": "page",
       "data-active": true,
     });
 
-    expect(result.current.isActive("/users")).toEqual({
+    expect(result.current.getActiveLinkProps("/users")).toEqual({
       active: false,
       "aria-current": undefined,
       "data-active": undefined,
@@ -88,8 +91,8 @@ describe("useNextActiveLink", () => {
 
     const { result } = renderHook(() => useNextActiveLink());
 
-    expect(result.current.isActive("/dashboard").active).toBe(true);
-    expect(result.current.isActive("/dashboard/").active).toBe(true);
+    expect(result.current.getActiveLinkProps("/dashboard").active).toBe(true);
+    expect(result.current.getActiveLinkProps("/dashboard/").active).toBe(true);
   });
 
   it("handles query strings and hash fragments", () => {
@@ -97,10 +100,12 @@ describe("useNextActiveLink", () => {
 
     const { result } = renderHook(() => useNextActiveLink());
 
-    expect(result.current.isActive("/dashboard?tab=settings").active).toBe(
-      true
-    );
+    expect(
+      result.current.getActiveLinkProps("/dashboard?tab=settings").active
+    ).toBe(true);
 
-    expect(result.current.isActive("/dashboard#settings").active).toBe(true);
+    expect(
+      result.current.getActiveLinkProps("/dashboard#settings").active
+    ).toBe(true);
   });
 });

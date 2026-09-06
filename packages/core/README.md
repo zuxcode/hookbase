@@ -54,17 +54,17 @@ Import hooks directly from `hookbase-core`:
 import { useActiveLink } from "hookbase-core";
 
 function Navigation() {
-  const { isActive } = useActiveLink({
+  const { getActiveLinkProps } = useActiveLink({
     pathname: "/dashboard/settings",
   });
 
   return (
     <nav>
-      <a href="/dashboard" {...isActive("/dashboard")}>
+      <a href="/dashboard" {...getActiveLinkProps("/dashboard")}>
         Dashboard
       </a>
 
-      <a href="/dashboard/settings" {...isActive("/dashboard/settings")}>
+      <a href="/dashboard/settings" {...getActiveLinkProps("/dashboard/settings")}>
         Settings
       </a>
     </nav>
@@ -79,7 +79,7 @@ function Navigation() {
 Determines whether a navigation link corresponds to the current pathname.
 
 ```tsx
-const { isActive } = useActiveLink({
+const { getActiveLinkProps } = useActiveLink({
   pathname: "/dashboard/settings",
 });
 ```
@@ -87,7 +87,7 @@ const { isActive } = useActiveLink({
 Use it with:
 
 ```tsx
-<a href="/dashboard" {...isActive("/dashboard")}>
+<a href="/dashboard" {...getActiveLinkProps("/dashboard")}>
   Dashboard
 </a>
 ```
@@ -109,7 +109,7 @@ An active link produces attributes such as:
 By default, nested paths are considered active.
 
 ```tsx
-isActive("/dashboard");
+getActiveLinkProps("/dashboard");
 ```
 
 matches:
@@ -125,7 +125,7 @@ matches:
 Use `exact` when only the specified pathname should match:
 
 ```tsx
-isActive("/dashboard", {
+getActiveLinkProps("/dashboard", {
   exact: true,
 });
 ```

@@ -8,9 +8,9 @@ describe("useActiveLink", () => {
 
   describe("exact matching", () => {
     it("matches the current pathname", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/dashboard")).toEqual({
+      expect(getActiveLinkProps("/dashboard")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -18,9 +18,9 @@ describe("useActiveLink", () => {
     });
 
     it("does not match a different pathname", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/settings")).toEqual({
+      expect(getActiveLinkProps("/settings")).toEqual({
         active: false,
         "aria-current": undefined,
         "data-active": false,
@@ -28,9 +28,9 @@ describe("useActiveLink", () => {
     });
 
     it("matches nested routes by default", () => {
-      const { isActive } = renderActiveLink("/dashboard/users");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard/users");
 
-      expect(isActive("/dashboard")).toEqual({
+      expect(getActiveLinkProps("/dashboard")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -38,9 +38,9 @@ describe("useActiveLink", () => {
     });
 
     it("does not match similar but unrelated paths", () => {
-      const { isActive } = renderActiveLink("/users");
+      const { getActiveLinkProps } = renderActiveLink("/users");
 
-      expect(isActive("/user")).toEqual({
+      expect(getActiveLinkProps("/user")).toEqual({
         active: false,
         "aria-current": undefined,
         "data-active": false,
@@ -50,9 +50,9 @@ describe("useActiveLink", () => {
 
   describe("exact option", () => {
     it("only matches the exact pathname when exact is true", () => {
-      const { isActive } = renderActiveLink("/dashboard/users");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard/users");
 
-      expect(isActive("/dashboard", { exact: true })).toEqual({
+      expect(getActiveLinkProps("/dashboard", { exact: true })).toEqual({
         active: false,
         "aria-current": undefined,
         "data-active": false,
@@ -60,9 +60,9 @@ describe("useActiveLink", () => {
     });
 
     it("matches an exact pathname when exact is true", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/dashboard", { exact: true })).toEqual({
+      expect(getActiveLinkProps("/dashboard", { exact: true })).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -72,9 +72,9 @@ describe("useActiveLink", () => {
 
   describe("root pathname", () => {
     it("matches the root pathname", () => {
-      const { isActive } = renderActiveLink("/");
+      const { getActiveLinkProps } = renderActiveLink("/");
 
-      expect(isActive("/")).toEqual({
+      expect(getActiveLinkProps("/")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -82,9 +82,9 @@ describe("useActiveLink", () => {
     });
 
     it("does not match root against another route", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/")).toEqual({
+      expect(getActiveLinkProps("/")).toEqual({
         active: false,
         "aria-current": undefined,
         "data-active": false,
@@ -92,9 +92,9 @@ describe("useActiveLink", () => {
     });
 
     it("does not allow root to match every route", () => {
-      const { isActive } = renderActiveLink("/anything");
+      const { getActiveLinkProps } = renderActiveLink("/anything");
 
-      expect(isActive("/")).toEqual({
+      expect(getActiveLinkProps("/")).toEqual({
         active: false,
         "aria-current": undefined,
         "data-active": false,
@@ -104,9 +104,9 @@ describe("useActiveLink", () => {
 
   describe("query strings and hashes", () => {
     it("ignores query strings in the current pathname", () => {
-      const { isActive } = renderActiveLink("/dashboard?tab=users");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard?tab=users");
 
-      expect(isActive("/dashboard")).toEqual({
+      expect(getActiveLinkProps("/dashboard")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -114,9 +114,9 @@ describe("useActiveLink", () => {
     });
 
     it("ignores hashes in the current pathname", () => {
-      const { isActive } = renderActiveLink("/dashboard#users");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard#users");
 
-      expect(isActive("/dashboard")).toEqual({
+      expect(getActiveLinkProps("/dashboard")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -124,9 +124,9 @@ describe("useActiveLink", () => {
     });
 
     it("ignores query strings and hashes in href", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/dashboard?tab=users#section")).toEqual({
+      expect(getActiveLinkProps("/dashboard?tab=users#section")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -136,9 +136,9 @@ describe("useActiveLink", () => {
 
   describe("trailing slashes", () => {
     it("normalizes trailing slashes by default", () => {
-      const { isActive } = renderActiveLink("/dashboard/");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard/");
 
-      expect(isActive("/dashboard")).toEqual({
+      expect(getActiveLinkProps("/dashboard")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -146,9 +146,9 @@ describe("useActiveLink", () => {
     });
 
     it("normalizes multiple trailing slashes", () => {
-      const { isActive } = renderActiveLink("/dashboard///");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard///");
 
-      expect(isActive("/dashboard")).toEqual({
+      expect(getActiveLinkProps("/dashboard")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -156,9 +156,9 @@ describe("useActiveLink", () => {
     });
 
     it("keeps the root pathname as '/'", () => {
-      const { isActive } = renderActiveLink("////");
+      const { getActiveLinkProps } = renderActiveLink("////");
 
-      expect(isActive("/")).toEqual({
+      expect(getActiveLinkProps("/")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -166,9 +166,11 @@ describe("useActiveLink", () => {
     });
 
     it("does not normalize trailing slashes when trailingSlash is false", () => {
-      const { isActive } = renderActiveLink("/dashboard/");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard/");
 
-      expect(isActive("/dashboard", { trailingSlash: false })).toEqual({
+      expect(
+        getActiveLinkProps("/dashboard", { trailingSlash: false })
+      ).toEqual({
         active: false,
         "aria-current": undefined,
         "data-active": false,
@@ -176,9 +178,11 @@ describe("useActiveLink", () => {
     });
 
     it("requires the same trailing slash when normalization is disabled", () => {
-      const { isActive } = renderActiveLink("/dashboard/");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard/");
 
-      expect(isActive("/dashboard/", { trailingSlash: false })).toEqual({
+      expect(
+        getActiveLinkProps("/dashboard/", { trailingSlash: false })
+      ).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -188,9 +192,9 @@ describe("useActiveLink", () => {
 
   describe("path normalization", () => {
     it("adds a leading slash to the href", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("dashboard")).toEqual({
+      expect(getActiveLinkProps("dashboard")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -198,9 +202,9 @@ describe("useActiveLink", () => {
     });
 
     it("adds a leading slash to the current pathname", () => {
-      const { isActive } = renderActiveLink("dashboard");
+      const { getActiveLinkProps } = renderActiveLink("dashboard");
 
-      expect(isActive("/dashboard")).toEqual({
+      expect(getActiveLinkProps("/dashboard")).toEqual({
         active: true,
         "aria-current": "page",
         "data-active": true,
@@ -210,40 +214,40 @@ describe("useActiveLink", () => {
 
   describe("aria-current", () => {
     it("returns 'page' when the link is active", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/dashboard")["aria-current"]).toBe("page");
+      expect(getActiveLinkProps("/dashboard")["aria-current"]).toBe("page");
     });
 
     it("returns undefined when the link is inactive", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/settings")["aria-current"]).toBeUndefined();
+      expect(getActiveLinkProps("/settings")["aria-current"]).toBeUndefined();
     });
   });
 
   describe("data-active", () => {
     it("returns true when the link is active", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/dashboard")["data-active"]).toBe(true);
+      expect(getActiveLinkProps("/dashboard")["data-active"]).toBe(true);
     });
 
     it("returns false when the link is inactive", () => {
-      const { isActive } = renderActiveLink("/dashboard");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard");
 
-      expect(isActive("/settings")["data-active"]).toBe(false);
+      expect(getActiveLinkProps("/settings")["data-active"]).toBe(false);
     });
   });
 
   describe("multiple links", () => {
     it("can evaluate multiple hrefs from the same hook instance", () => {
-      const { isActive } = renderActiveLink("/dashboard/users");
+      const { getActiveLinkProps } = renderActiveLink("/dashboard/users");
 
-      expect(isActive("/dashboard").active).toBe(true);
-      expect(isActive("/dashboard/users").active).toBe(true);
-      expect(isActive("/settings").active).toBe(false);
-      expect(isActive("/user").active).toBe(false);
+      expect(getActiveLinkProps("/dashboard").active).toBe(true);
+      expect(getActiveLinkProps("/dashboard/users").active).toBe(true);
+      expect(getActiveLinkProps("/settings").active).toBe(false);
+      expect(getActiveLinkProps("/user").active).toBe(false);
     });
   });
 });

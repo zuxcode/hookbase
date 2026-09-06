@@ -14,14 +14,14 @@ import { usePathname } from "next/navigation";
  * import { useNextActiveLink } from "hookbase/next";
  *
  * export function Navigation() {
- *   const { isActive } = useNextActiveLink();
+ *   const { getActiveLinkProps } = useNextActiveLink();
  *
  *   return (
  *     <nav>
  *       <Link
  *         href="/dashboard"
  *         className={
- *           isActive("/dashboard")
+ *           getActiveLinkProps("/dashboard")
  *             ? "text-primary"
  *             : "text-muted-foreground"
  *         }
@@ -32,7 +32,7 @@ import { usePathname } from "next/navigation";
  *       <Link
  *         href="/users"
  *         className={
- *           isActive("/users")
+ *           getActiveLinkProps("/users")
  *             ? "text-primary"
  *             : "text-muted-foreground"
  *         }
@@ -49,7 +49,9 @@ import { usePathname } from "next/navigation";
 export function useNextActiveLink(): ActiveLink {
   const pathname = usePathname();
 
-  return useActiveLink({
-    pathname: pathname || "/",
+  const { getActiveLinkProps } = useActiveLink({
+    pathname,
   });
+
+  return { getActiveLinkProps };
 }

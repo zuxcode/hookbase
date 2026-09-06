@@ -124,17 +124,17 @@ Core hooks can be imported from `hookbase-core`:
 import { useActiveLink } from "hookbase-core";
 
 function Navigation() {
-  const { isActive } = useActiveLink({
+  const { getActiveLinkProps } = useActiveLink({
     pathname: "/dashboard/settings",
   });
 
   return (
     <nav>
-      <a href="/dashboard" {...isActive("/dashboard")}>
+      <a href="/dashboard" {...getActiveLinkProps("/dashboard")}>
         Dashboard
       </a>
 
-      <a href="/dashboard/settings" {...isActive("/dashboard/settings")}>
+      <a href="/dashboard/settings" {...getActiveLinkProps("/dashboard/settings")}>
         Settings
       </a>
     </nav>
@@ -150,15 +150,15 @@ Next.js-specific functionality can be imported from `hookbase-nextjs`:
 import { useNextActiveLink } from "hookbase-nextjs";
 
 export function Navigation() {
-  const { isActive } = useNextActiveLink();
+  const { getActiveLinkProps } = useNextActiveLink();
 
   return (
     <nav>
-      <a href="/dashboard" {...isActive("/dashboard")}>
+      <a href="/dashboard" {...getActiveLinkProps("/dashboard")}>
         Dashboard
       </a>
 
-      <a href="/settings" {...isActive("/settings")}>
+      <a href="/settings" {...getActiveLinkProps("/settings")}>
         Settings
       </a>
     </nav>

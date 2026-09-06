@@ -24,7 +24,7 @@ export interface UseActiveLinkOptions {
 }
 
 export interface ActiveLink {
-  isActive: (
+  getActiveLinkProps: (
     href: string,
     options?: ActiveLinkOptions
   ) => {
@@ -93,9 +93,10 @@ function matchPath(
  * Router-agnostic active-link hook.
  */
 export function useActiveLink({ pathname }: UseActiveLinkOptions): ActiveLink {
-  const isActive = useCallback(
+  const getActiveLinkProps = useCallback(
     (href: string, options?: ActiveLinkOptions) => {
       const active = matchPath(pathname, href, options);
+
       return {
         active,
         "aria-current": active ? "page" : undefined,
@@ -106,6 +107,6 @@ export function useActiveLink({ pathname }: UseActiveLinkOptions): ActiveLink {
   );
 
   return {
-    isActive,
+    getActiveLinkProps,
   };
 }
