@@ -447,7 +447,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tbody>
     <tr>
-      <td align="center" valign="top" width="14.28%"><a href="https://github.com/zuxcode"><img src="https://avatars.githubusercontent.com/u/91379753?v=4?s=100" width="100px;" alt="Alfred Chigozie Nwanokwai"/><br /><sub><b>Alfred Chigozie Nwanokwai</b></sub></a><br /><a href="https://github.com/zuxcode/hookforge/commits?author=zuxcode" title="Documentation">📖</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/zuxcode"><img src="https://avatars.githubusercontent.com/u/91379753?v=4?s=100" width="100px;" alt="Alfred Nwanokwai"/><br /><sub><b>Alfred Nwanokwai</b></sub></a><br /><a href="https://github.com/zuxcode/hookforge/commits?author=zuxcode" title="Documentation">📖</a></td>
     </tr>
   </tbody>
   <tfoot>
