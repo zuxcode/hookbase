@@ -144,7 +144,7 @@ This makes it suitable for applications using:
 
 Framework-specific functionality belongs in dedicated Hookforge integration packages.
 
-For Next.js applications, see [`@hookforge/nextjs`](../nextjs).
+For Next.js applications, see [`hookforge-nextjs`](../nextjs).
 
 ## Development
 

@@ -9,13 +9,13 @@ Hookforge currently contains these workspaces:
 | Package | Purpose | Publish status |
 | --- | --- | --- |
 | `hookforge-core` | Framework-independent React Hooks | Publishable |
-| `@hookforge/nextjs` | Next.js-specific React Hooks and adapters | Publishable |
+| `hookforge-nextjs` | Next.js-specific React Hooks and adapters | Publishable |
 | `@hookforge/typescript-config` | Shared TypeScript configuration | Private |
 
 The dependency direction is intentional:
 
 ```text
-@hookforge/nextjs
+hookforge-nextjs
         │
         ▼
 hookforge-core
@@ -94,8 +94,8 @@ pnpm --filter hookforge-core test
 ### Next.js
 
 ```bash
-pnpm --filter @hookforge/nextjs build
-pnpm --filter @hookforge/nextjs test
+pnpm --filter hookforge-nextjs build
+pnpm --filter hookforge-nextjs test
 ```
 
 When changing a shared or cross-package API, run the complete repository checks as well.
@@ -120,7 +120,7 @@ A new hook should:
 
 Put a hook in `hookforge-core` when it is framework-independent.
 
-Put a hook in `@hookforge/nextjs` when it directly depends on Next.js APIs or Next.js runtime behavior.
+Put a hook in `hookforge-nextjs` when it directly depends on Next.js APIs or Next.js runtime behavior.
 
 Do not introduce a Next.js dependency into `hookforge-core`.
 
@@ -307,7 +307,7 @@ Do not silently change a public API.
 
 Hookforge packages are released independently using Semantic Release and Conventional Commits.
 
-A change to `hookforge-core` does not automatically require a release of `@hookforge/nextjs` unless the Next.js package is also affected.
+A change to `hookforge-core` does not automatically require a release of `hookforge-nextjs` unless the Next.js package is also affected.
 
 Do not manually couple package versions or create a root-level release for all packages unless the release configuration requires it.
 
