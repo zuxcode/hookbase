@@ -29,7 +29,7 @@ export interface ActiveLink {
     options?: ActiveLinkOptions
   ) => {
     active: boolean;
-    "aria-current": string | undefined;
+    "aria-current": React.AriaAttributes["aria-current"];
     "data-active": boolean | undefined;
   };
 }
