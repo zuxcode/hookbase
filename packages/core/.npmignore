@@ -18,6 +18,8 @@ coverage/
 .turbo/
 node_modules/
 
+src/
+
 # TypeScript
 tsconfig*.json
 
