@@ -1,28 +1,28 @@
-# Hookbase-nextjs
+# hookbase-nextjs
 
-<h1 align="center">Hookbase-nextjs</h1>
+<h1 align="center">hookbase-nextjs</h1>
 
 <p align="center">
   Type-safe React Hooks and adapters for Next.js applications.
 </p>
 
 <p align="center">
-  <a href="https://github.com/zuxcode/Hookbase">
-    <img alt="Repository" src="https://img.shields.io/badge/repository-Hookbase-blue.svg?style=flat-square">
+  <a href="https://github.com/zuxcode/hookbase">
+    <img alt="Repository" src="https://img.shields.io/badge/repository-hookbase-blue.svg?style=flat-square">
   </a>
-  <a href="https://www.npmjs.com/package/Hookbase-nextjs">
-    <img alt="npm" src="https://img.shields.io/npm/v/Hookbase-nextjs.svg?style=flat-square">
+  <a href="https://www.npmjs.com/package/hookbase-nextjs">
+    <img alt="npm" src="https://img.shields.io/npm/v/hookbase-nextjs.svg?style=flat-square">
   </a>
   <a href="../../LICENSE">
-    <img alt="License" src="https://img.shields.io/npm/l/Hookbase-nextjs.svg?style=flat-square">
+    <img alt="License" src="https://img.shields.io/npm/l/hookbase-nextjs.svg?style=flat-square">
   </a>
 </p>
 
 ## About
 
-`Hookbase-nextjs` provides Next.js-specific hooks and adapters for Hookbase.
+`hookbase-nextjs` provides Next.js-specific hooks and adapters for hookbase.
 
-It is designed to integrate Hookbase with Next.js APIs while keeping the framework-independent functionality in [`Hookbase-core`](../core).
+It is designed to integrate hookbase with Next.js APIs while keeping the framework-independent functionality in [`hookbase-core`](../core).
 
 The package is intended for applications using modern Next.js and React.
 
@@ -33,31 +33,31 @@ Install both the Next.js integration and its core dependency:
 ### pnpm
 
 ```bash
-pnpm add Hookbase-nextjs
+pnpm add hookbase-nextjs
 ```
 
 ### npm
 
 ```bash
-npm install Hookbase-nextjs
+npm install hookbase-nextjs
 ```
 
 ### yarn
 
 ```bash
-yarn add Hookbase-nextjs
+yarn add hookbase-nextjs
 ```
 
 ## Usage
 
-Next.js-specific hooks can be imported from `Hookbase-nextjs`.
+Next.js-specific hooks can be imported from `hookbase-nextjs`.
 
 For example:
 
 ```tsx
 "use client";
 
-import { useNextActiveLink } from "Hookbase-nextjs";
+import { useNextActiveLink } from "hookbase-nextjs";
 
 export function Navigation() {
   const { isActive } = useNextActiveLink();
@@ -93,7 +93,7 @@ For example:
 ```tsx
 "use client";
 
-import { useNextActiveLink } from "Hookbase-nextjs";
+import { useNextActiveLink } from "hookbase-nextjs";
 
 export function Navigation() {
   const { isActive } = useNextActiveLink();
@@ -111,7 +111,7 @@ Provides active-link behavior using the current Next.js pathname.
 ```tsx
 "use client";
 
-import { useNextActiveLink } from "Hookbase-nextjs";
+import { useNextActiveLink } from "hookbase-nextjs";
 
 const { isActive } = useNextActiveLink();
 ```
@@ -140,26 +140,26 @@ isActive("/dashboard", {
 });
 ```
 
-## Relationship with `Hookbase-core`
+## Relationship with `hookbase-core`
 
 The package architecture separates framework-independent logic from Next.js-specific APIs.
 
 ```text
-Hookbase-nextjs
+hookbase-nextjs
         │
         ▼
-Hookbase-core
+hookbase-core
 ```
 
-`Hookbase-nextjs` may depend on `Hookbase-core`.
+`hookbase-nextjs` may depend on `hookbase-core`.
 
-`Hookbase-core` does not depend on `Hookbase-nextjs` or Next.js.
+`hookbase-core` does not depend on `hookbase-nextjs` or Next.js.
 
 This allows the core package to remain usable outside Next.js while providing a dedicated integration for Next.js applications.
 
 ## Development
 
-From the Hookbase repository root:
+From the hookbase repository root:
 
 ```bash
 pnpm install
@@ -168,19 +168,19 @@ pnpm install
 Build the package:
 
 ```bash
-pnpm --filter Hookbase-nextjs build
+pnpm --filter hookbase-nextjs build
 ```
 
 Run tests:
 
 ```bash
-pnpm --filter Hookbase-nextjs test
+pnpm --filter hookbase-nextjs test
 ```
 
 Run type checking:
 
 ```bash
-pnpm --filter Hookbase-nextjs lint:types
+pnpm --filter hookbase-nextjs lint:types
 ```
 
 ## Package Structure
@@ -196,9 +196,9 @@ packages/nextjs/
 
 ## Publishing
 
-`Hookbase-nextjs` is independently versioned and published to npm.
+`hookbase-nextjs` is independently versioned and published to npm.
 
-A change to `Hookbase-nextjs` does not require a new `Hookbase-core` release unless the core package itself has changed.
+A change to `hookbase-nextjs` does not require a new `hookbase-core` release unless the core package itself has changed.
 
 ## Contributing
 

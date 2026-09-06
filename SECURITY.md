@@ -38,4 +38,4 @@ Please allow reasonable time for investigation before public disclosure.
 
 ## Dependency vulnerabilities
 
-If a vulnerability originates in a third-party dependency, report it through the upstream security process and notify Hookbase maintainers when Hookbase is affected.
+If a vulnerability originates in a third-party dependency, report it through the upstream security process and notify hookbase maintainers when hookbase is affected.

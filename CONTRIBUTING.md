@@ -1,27 +1,27 @@
-# Contributing to Hookbase
+# Contributing to hookbase
 
-Thank you for contributing to Hookbase! Hookbase is a TypeScript-first monorepo for reusable, composable, production-ready React Hooks, with a framework-independent core and dedicated framework integrations.
+Thank you for contributing to hookbase! hookbase is a TypeScript-first monorepo for reusable, composable, production-ready React Hooks, with a framework-independent core and dedicated framework integrations.
 
 ## Repository architecture
 
-Hookbase currently contains these workspaces:
+hookbase currently contains these workspaces:
 
 | Package | Purpose | Publish status |
 | --- | --- | --- |
-| `Hookbase-core` | Framework-independent React Hooks | Publishable |
-| `Hookbase-nextjs` | Next.js-specific React Hooks and adapters | Publishable |
-| `@Hookbase/typescript-config` | Shared TypeScript configuration | Private |
+| `hookbase-core` | Framework-independent React Hooks | Publishable |
+| `hookbase-nextjs` | Next.js-specific React Hooks and adapters | Publishable |
+| `@hookbase/typescript-config` | Shared TypeScript configuration | Private |
 
 The dependency direction is intentional:
 
 ```text
-Hookbase-nextjs
+hookbase-nextjs
         │
         ▼
-Hookbase-core
+hookbase-core
 ```
 
-`Hookbase-core` must never depend on Next.js.
+`hookbase-core` must never depend on Next.js.
 
 Each publishable package owns its source, tests, build configuration, metadata, declarations, README, and release lifecycle.
 
@@ -34,8 +34,8 @@ Use the Node.js and pnpm versions declared by the repository configuration.
 Clone the repository:
 
 ```bash
-git clone https://github.com/zuxcode/Hookbase.git
-cd Hookbase
+git clone https://github.com/zuxcode/hookbase.git
+cd hookbase
 ```
 
 Install dependencies:
@@ -87,15 +87,15 @@ Use pnpm filters for focused development.
 ### Core
 
 ```bash
-pnpm --filter Hookbase-core build
-pnpm --filter Hookbase-core test
+pnpm --filter hookbase-core build
+pnpm --filter hookbase-core test
 ```
 
 ### Next.js
 
 ```bash
-pnpm --filter Hookbase-nextjs build
-pnpm --filter Hookbase-nextjs test
+pnpm --filter hookbase-nextjs build
+pnpm --filter hookbase-nextjs test
 ```
 
 When changing a shared or cross-package API, run the complete repository checks as well.
@@ -118,11 +118,11 @@ A new hook should:
 
 ### Choose the correct package
 
-Put a hook in `Hookbase-core` when it is framework-independent.
+Put a hook in `hookbase-core` when it is framework-independent.
 
-Put a hook in `Hookbase-nextjs` when it directly depends on Next.js APIs or Next.js runtime behavior.
+Put a hook in `hookbase-nextjs` when it directly depends on Next.js APIs or Next.js runtime behavior.
 
-Do not introduce a Next.js dependency into `Hookbase-core`.
+Do not introduce a Next.js dependency into `hookbase-core`.
 
 ## SSR and Next.js compatibility
 
@@ -156,7 +156,7 @@ For public API changes:
 
 ## Tests
 
-Hookbase uses Jest and React Testing Library.
+hookbase uses Jest and React Testing Library.
 
 Tests should cover the behavior that matters to users, including where applicable:
 
@@ -180,7 +180,7 @@ pnpm test:coverage
 
 ## Code quality
 
-Hookbase uses Ultracite for code quality and formatting, with Lefthook managing Git hooks.
+hookbase uses Ultracite for code quality and formatting, with Lefthook managing Git hooks.
 
 Run checks:
 
@@ -244,7 +244,7 @@ git checkout -b feat/nextjs-router-state
 
 ## Commits
 
-Hookbase uses Conventional Commits and package scopes.
+hookbase uses Conventional Commits and package scopes.
 
 Examples:
 
@@ -305,9 +305,9 @@ Do not silently change a public API.
 
 ## Releases
 
-Hookbase packages are released independently using Semantic Release and Conventional Commits.
+hookbase packages are released independently using Semantic Release and Conventional Commits.
 
-A change to `Hookbase-core` does not automatically require a release of `Hookbase-nextjs` unless the Next.js package is also affected.
+A change to `hookbase-core` does not automatically require a release of `hookbase-nextjs` unless the Next.js package is also affected.
 
 Do not manually couple package versions or create a root-level release for all packages unless the release configuration requires it.
 
@@ -317,10 +317,10 @@ Do not report security vulnerabilities in public issues. See `SECURITY.md`.
 
 ## Code of Conduct
 
-Participation in Hookbase is governed by `CODE_OF_CONDUCT.md`.
+Participation in hookbase is governed by `CODE_OF_CONDUCT.md`.
 
 ## Questions and proposals
 
 Use GitHub Issues for actionable bugs and feature/hook proposals. When available, use Discussions for general questions and community conversation.
 
-Thanks for helping build Hookbase!
+Thanks for helping build hookbase!

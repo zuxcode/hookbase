@@ -24,8 +24,8 @@ const publishPackage = async (pkg: string) => {
   const content = `${JSON.stringify(pkgJson, null, "\t")}\n`;
 
   const newContent = content.replace(
-    new RegExp(`"@Hookbase/\\*": "${oldVersion}"`, "g"),
-    `"@Hookbase/*": "${newVersion}"`
+    new RegExp(`"@hookbase/\\*": "${oldVersion}"`, "g"),
+    `"@hookbase/*": "${newVersion}"`
   );
 
   await Promise.all([

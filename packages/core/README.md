@@ -1,57 +1,57 @@
-# Hookbase-core
+# hookbase-core
 
-<h1 align="center">Hookbase-core</h1>
+<h1 align="center">hookbase-core</h1>
 
 <p align="center">
   Framework-independent, type-safe React Hooks for modern React applications.
 </p>
 
 <p align="center">
-  <a href="https://github.com/zuxcode/Hookbase">
-    <img alt="Repository" src="https://img.shields.io/badge/repository-Hookbase-blue.svg?style=flat-square">
+  <a href="https://github.com/zuxcode/hookbase">
+    <img alt="Repository" src="https://img.shields.io/badge/repository-hookbase-blue.svg?style=flat-square">
   </a>
-  <a href="https://www.npmjs.com/package/Hookbase-core">
-    <img alt="npm" src="https://img.shields.io/npm/v/Hookbase-core.svg?style=flat-square">
+  <a href="https://www.npmjs.com/package/hookbase-core">
+    <img alt="npm" src="https://img.shields.io/npm/v/hookbase-core.svg?style=flat-square">
   </a>
   <a href="../../LICENSE">
-    <img alt="License" src="https://img.shields.io/npm/l/Hookbase-core.svg?style=flat-square">
+    <img alt="License" src="https://img.shields.io/npm/l/hookbase-core.svg?style=flat-square">
   </a>
 </p>
 
 ## About
 
-`Hookbase-core` is the framework-independent foundation of Hookbase.
+`hookbase-core` is the framework-independent foundation of hookbase.
 
 It provides reusable, composable, and production-ready React Hooks without coupling the package to Next.js or another application framework.
 
-Use `Hookbase-core` when you want Hookbase functionality in a React application regardless of the framework or build system.
+Use `hookbase-core` when you want hookbase functionality in a React application regardless of the framework or build system.
 
 ## Installation
 
 ### pnpm
 
 ```bash
-pnpm add Hookbase-core
+pnpm add hookbase-core
 ```
 
 ### npm
 
 ```bash
-npm install Hookbase-core
+npm install hookbase-core
 ```
 
 ### yarn
 
 ```bash
-yarn add Hookbase-core
+yarn add hookbase-core
 ```
 
 ## Usage
 
-Import hooks directly from `Hookbase-core`:
+Import hooks directly from `hookbase-core`:
 
 ```tsx
-import { useActiveLink } from "Hookbase-core";
+import { useActiveLink } from "hookbase-core";
 
 function Navigation() {
   const { isActive } = useActiveLink({
@@ -132,7 +132,7 @@ isActive("/dashboard", {
 
 ## Framework Independence
 
-`Hookbase-core` does **not** depend on Next.js.
+`hookbase-core` does **not** depend on Next.js.
 
 This makes it suitable for applications using:
 
@@ -142,13 +142,13 @@ This makes it suitable for applications using:
 * Other React-based build systems
 * Custom React applications
 
-Framework-specific functionality belongs in dedicated Hookbase integration packages.
+Framework-specific functionality belongs in dedicated hookbase integration packages.
 
-For Next.js applications, see [`Hookbase-nextjs`](../nextjs).
+For Next.js applications, see [`hookbase-nextjs`](../nextjs).
 
 ## Development
 
-From the Hookbase repository root:
+From the hookbase repository root:
 
 ```bash
 pnpm install
@@ -157,19 +157,19 @@ pnpm install
 Build the package:
 
 ```bash
-pnpm --filter Hookbase-core build
+pnpm --filter hookbase-core build
 ```
 
 Run tests:
 
 ```bash
-pnpm --filter Hookbase-core test
+pnpm --filter hookbase-core test
 ```
 
 Run type checking:
 
 ```bash
-pnpm --filter Hookbase-core lint:types
+pnpm --filter hookbase-core lint:types
 ```
 
 ## Package Structure
@@ -185,9 +185,9 @@ packages/core/
 
 ## Publishing
 
-`Hookbase-core` is independently versioned and published to npm.
+`hookbase-core` is independently versioned and published to npm.
 
-Changes to the core package can be released without requiring a release of other Hookbase packages.
+Changes to the core package can be released without requiring a release of other hookbase packages.
 
 ## Contributing
 
