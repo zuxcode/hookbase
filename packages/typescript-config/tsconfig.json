@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json.schemastore.org/tsconfig",
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "moduleDetection": "force",
+
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "noImplicitOverride": true,
+
+    "isolatedModules": true,
+    "isolatedDeclarations": true,
+    "verbatimModuleSyntax": true,
+    "erasableSyntaxOnly": true,
+
+    "resolveJsonModule": true,
+
+    "declaration": true,
+    "declarationMap": true,
+
+    "incremental": true,
+    "composite": true,
+    "tsBuildInfoFile": "${configDir}/.cache/tsbuildinfo.json",
+
+    "skipLibCheck": true
+  },
+
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["node_modules", "dist"]
+}

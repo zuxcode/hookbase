@@ -1,0 +1,59 @@
+{
+  "name": "@hookforge/core",
+  "version": "0.0.2-canary.23bf755",
+  "description": "React/Next.js Hooks Library",
+  "keywords": [
+    "react",
+    "hooks",
+    "react-hooks",
+    "nextjs",
+    "next"
+  ],
+  "homepage": "https://github.com/zuxcode/hookforge#readme",
+  "bugs": {
+    "url": "https://github.com/zuxcode/hookforge/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zuxcode/hookforge.git"
+  },
+  "license": "MIT",
+  "author": "Alfred Chigozie Nwanokwai <zuxcode@gmail.com>",
+  "sideEffects": false,
+  "main": "dist/hookforge.js",
+  "unpkg": "dist/hookforge.umd.min.js",
+  "module": "dist/hookforge.esm.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "pnpm run clean && tsdown",
+    "check": "ultracite check",
+    "check-types": "tsgo --noEmit",
+    "clean": "rimraf dist",
+    "cz": "git-cz",
+    "fix": "ultracite fix",
+    "release": "semantic-release",
+    "test": "jest",
+    "test:coverage": "jest --coverage",
+    "test:watch": "jest --watch"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "dependencies": {
+    "tsdown": "^0.23.0"
+  },
+  "devDependencies": {
+    "@hookforge/typescript-config": "workspace:*",
+    "@testing-library/react": "^16.3.3",
+    "react": "^19.2.8",
+    "vitest": "^5.0.0"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0"
+  }
+}

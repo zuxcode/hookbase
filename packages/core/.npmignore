@@ -1,0 +1,45 @@
+# Source
+src/
+
+# Tests
+test/
+tests/
+__tests__/
+*.test.*
+*.spec.*
+
+# Development
+.github/
+.vscode/
+.editorconfig
+
+# Tooling
+coverage/
+.turbo/
+node_modules/
+
+# TypeScript
+tsconfig*.json
+
+# Build tooling
+tsdown.config.*
+vite.config.*
+rollup.config.*
+
+# Documentation
+README.md
+CHANGELOG.md
+CONTRIBUTING.md
+
+# Repository files
+.git/
+.gitignore
+.gitattributes
+
+# Package manager
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# Misc
+*.log
+.DS_Store

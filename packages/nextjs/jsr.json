@@ -1,0 +1,9 @@
+{
+  "name": "hookforge/nextjs",
+  "version": "0.0.2-canary.23bf755",
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "include": ["src/**/*.ts", "README.md", "LICENSE", "package.json"],
+  "exclude": ["node_modules", "dist", "test"]
+}

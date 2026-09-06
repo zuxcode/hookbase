@@ -3,20 +3,25 @@
   "projectOwner": "zuxcode",
   "repoType": "github",
   "repoHost": "https://github.com",
-  "files": [
-    "README.md"
-  ],
+  "files": ["README.md"],
   "imageSize": 100,
   "commit": true,
   "commitConvention": "angular",
   "contributors": [
     {
       "login": "zuxcode",
-      "name": "Alfred Nwanokwai",
+      "name": "Alfred Chigozie Nwanokwai",
       "avatar_url": "https://avatars.githubusercontent.com/u/91379753?v=4",
       "profile": "https://github.com/zuxcode",
       "contributions": [
-        "doc"
+        "code",
+        "ideas",
+        "infra",
+        "maintenance",
+        "doc",
+        "design",
+        "projectManagement",
+        "test"
       ]
     }
   ],
